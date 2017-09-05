@@ -78,7 +78,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\boxfunc.cs" />
+    <Compile Include="Assets\getHako.cs" />
     <Compile Include="Assets\script\CameraMove.cs" />
+    <Compile Include="Assets\script\gamemanager.cs" />
     <Compile Include="Assets\script\objSetti.cs" />
     <Compile Include="Assets\script\PlayerMove.cs" />
     <Compile Include="Assets\script\test.cs" />
