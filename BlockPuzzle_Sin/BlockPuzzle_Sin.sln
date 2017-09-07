@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockPuzzle_Sin", "BlockPuzzle_Sin.csproj", "{57BC9CE1-4C81-BF53-CA13-781DB1253AC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockPuzzle_Sin.Plugins", "BlockPuzzle_Sin.Plugins.csproj", "{1A1349A6-30CB-9573-E7A5-A60B329FB7D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockPuzzle_Sin.Editor.Plugins", "BlockPuzzle_Sin.Editor.Plugins.csproj", "{2468D61F-D701-41DE-B729-9C1DEE4998D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{57BC9CE1-4C81-BF53-CA13-781DB1253AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57BC9CE1-4C81-BF53-CA13-781DB1253AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57BC9CE1-4C81-BF53-CA13-781DB1253AC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1349A6-30CB-9573-E7A5-A60B329FB7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1349A6-30CB-9573-E7A5-A60B329FB7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1349A6-30CB-9573-E7A5-A60B329FB7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1349A6-30CB-9573-E7A5-A60B329FB7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2468D61F-D701-41DE-B729-9C1DEE4998D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2468D61F-D701-41DE-B729-9C1DEE4998D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2468D61F-D701-41DE-B729-9C1DEE4998D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2468D61F-D701-41DE-B729-9C1DEE4998D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
