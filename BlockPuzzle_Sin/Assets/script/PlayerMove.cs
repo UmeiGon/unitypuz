@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
     public Transform Camera1;
     private CharacterController CharaCon;
     private Animator anim;
-    private GameObject child;
+    public GameObject child;
     private float jumpCount;
     public int MAX_JUMP = 10;
+    public float eisyoTimer;
+    public bool eisyo;
     private float rakkakasoku = 0;
     private float jumpkasoku = 20;
     private bool jumpflag;
+    public Slider eisyobar;
     void Start()
     {
         CharaCon = GetComponent<CharacterController>();
@@ -34,6 +38,7 @@ public class PlayerMove : MonoBehaviour
             {
                 jumpflag = true;
                 anim.SetBool("jump", true);
+                rakkakasoku = 10;
             }
         }
         if (jumpflag)
@@ -44,21 +49,34 @@ public class PlayerMove : MonoBehaviour
             {
                 jumpCount = 0;
                 jumpkasoku = 20;
-                rakkakasoku = 0;
+                rakkakasoku = 10;
                 jumpflag = false;
                 anim.SetBool("jump", false);
             }
         }
         else if (!CharaCon.isGrounded)
         {
-            CharaCon.Move(new Vector3(0, -(rakkakasoku++) * Time.deltaTime, 0));
+            CharaCon.Move(new Vector3(0, -(rakkakasoku+=0.2f) * Time.deltaTime, 0));
         }
-
+        CharaCon.Move(new Vector3(0, -3.0f * Time.deltaTime, 0));
 
     }
     // Update is called once per frame
     void Update()
     {
+        if (eisyo)
+        {
+            anim.SetBool("saikutu", true);
+            eisyoTimer += Time.deltaTime;
+            eisyobar.gameObject.SetActive(true);
+            eisyobar.value = eisyoTimer;
+        }
+        else
+        {
+            anim.SetBool("saikutu", false);
+            eisyobar.gameObject.SetActive(false);
+            eisyoTimer = 0;
+        }
         transform.rotation = Camera1.rotation;
         float ad = Input.GetAxis("Horizontal");
         float ws = Input.GetAxis("Vertical");
@@ -70,7 +88,7 @@ public class PlayerMove : MonoBehaviour
 
         if (move.magnitude > 0)
         {
-
+            eisyo = false;
             anim.SetBool("walk", true);
             //モデルだけ移動方向に動かす
             child.transform.localRotation = Quaternion.LookRotation(move);
@@ -85,6 +103,25 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("walk", false);
         }
 
-
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "clear")
+        {
+            GameObject.Find("GameManager").GetComponent<gamemanager>().clearImg.SetActive(true);
+        }
+        if (other.gameObject.tag == "reset")
+        {
+            scenemanager sm = GameObject.Find("GameManager").GetComponent<scenemanager>();
+            sm.OnReset();
+        }
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "tama")
+        {
+            scenemanager sm = GameObject.Find("GameManager").GetComponent<scenemanager>();
+            sm.OnReset();
+        }
     }
 }

@@ -23,7 +23,7 @@ public class CameraMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 60f, 0);
+            transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 120f, 0);
         }
         float wheel = Input.GetAxis("Mouse ScrollWheel");
         Vector3 a = transform.position;

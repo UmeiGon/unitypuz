@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33320582237505622}
   - component: {fileID: 65645752064986612}
   - component: {fileID: 23362059747438440}
+  - component: {fileID: 114071206843195676}
   m_Layer: 0
   m_Name: cubeHontai
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403465817196748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.330882, y: -5.7658763, z: 12.51766}
+  m_LocalPosition: {x: -4.7712874, y: 0.9811964, z: 19.81}
   m_LocalScale: {x: 1, y: 0.4976181, z: 1}
   m_Children:
   - {fileID: 4271838706475238}
@@ -122,3 +123,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114071206843195676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1319674441330970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c63ae6059a445842833f23a53834daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
